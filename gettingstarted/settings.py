@@ -27,12 +27,13 @@ SECRET_KEY = 'CHANGE_ME!!!! (P.S. the SECRET_KEY environment variable will be us
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['hidden-bayou-29122.herokuapp.com']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
