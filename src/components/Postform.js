@@ -7,8 +7,7 @@ class PostForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: '',
-      body: ''
+      location:'',
     };
 
     this.onChange = this.onChange.bind(this);
@@ -23,8 +22,7 @@ class PostForm extends Component {
     e.preventDefault();
 
     const post = {
-      title: this.state.title,
-      body: this.state.body
+      location: this.state.location,
     };
 
     this.props.createPost(post);
@@ -33,29 +31,20 @@ class PostForm extends Component {
   render() {
     return (
       <div>
-        <h1>Add Post</h1>
+        <h1>Search POI using google places API.</h1>
         <form onSubmit={this.onSubmit}>
           <div>
-            <label>Title: </label>
+            <label>Location: </label>
             <br />
             <input
               type="text"
-              name="title"
+              name="location"
               onChange={this.onChange}
-              value={this.state.title}
+              value={this.state.location}
             />
           </div>
           <br />
-          <div>
-            <label>Body: </label>
-            <br />
-            <textarea
-              name="body"
-              onChange={this.onChange}
-              value={this.state.body}
-            />
-          </div>
-          <br />
+
           <button type="submit">Submit</button>
         </form>
       </div>
