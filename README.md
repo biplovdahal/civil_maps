@@ -1,4 +1,5 @@
-# Python: Getting Started
+# If installation still breaks please let me know!
+
 
 A barebones Django app, which can easily be deployed to Heroku.
 
@@ -9,17 +10,16 @@ This application supports the [Getting Started with Python on Heroku](https://de
 Make sure you have Python [installed properly](http://install.python-guide.org). Also, install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) and [Postgres](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup).
 
 ```sh
-$ git clone git@github.com:heroku/python-getting-started.git
-$ cd python-getting-started
+$ git clone https://github.com/biplovdahal/civil_maps
+$ git checkout backend
+$ cd backend
 
-$ pipenv install
-
-$ createdb python_getting_started
-
+$ pip install -r requirements.txt
+$ python manage.py makemigrations
 $ python manage.py migrate
 $ python manage.py collectstatic
 
-$ heroku local
+$ python manage.py runserver
 ```
 
 Your app should now be running on [localhost:5000](http://localhost:5000/).
