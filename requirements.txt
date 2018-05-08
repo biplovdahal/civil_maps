@@ -4,3 +4,4 @@ django-filter
 requests
 gunicorn
 django-heroku
+django-cors-headers
