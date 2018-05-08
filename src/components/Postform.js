@@ -31,7 +31,7 @@ class PostForm extends Component {
   render() {
     return (
       <div>
-        <h1>Search POI using google places API.</h1>
+        <h1>Search POI using google places API by city</h1>
         <form onSubmit={this.onSubmit}>
           <div>
             <label>Location: </label>

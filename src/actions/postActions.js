@@ -1,17 +1,34 @@
 import { FETCH_POSTS, NEW_POST } from './types';
-export const fetchPosts = () => dispatch => {
-  fetch('https://jsonplaceholder.typicode.com/posts')
-    .then(res => res.json())
-    .then(posts =>
-      dispatch({
-        type: FETCH_POSTS,
-        payload: posts
-      })
-    );
-};
+
+
+// export const fetchPosts = (location) => dispatch => {
+//   console.log('this is latitude', latitude)
+//   if(latitude){
+//     fetch('http://127.0.0.1:8000?latitude='+latitude+'&longitude='+longitude)
+//       .then(res => res.json())
+//       .then(posts =>
+//         dispatch({
+//           type: FETCH_POSTS,
+//           payload: posts
+//         })
+//       );
+//
+//   }else{
+//     fetch('https://jsonplaceholder.typicode.com/posts')
+//       .then(res => res.json())
+//       .then(posts =>
+//         dispatch({
+//           type: FETCH_POSTS,
+//           payload: posts
+//         })
+//       );
+//   };
+//   }
+
 
 export const createPost = location => dispatch => {
-  fetch('http://127.0.0.1:8000/?location='+location.location+'', {
+  fetch('https://vast-beach-76093.herokuapp.com?location='+location.location+'',{
+  //fetch('http://127.0.0.1:8000?location='+location.location+'', {
     method: 'GET',
 
     headers: {

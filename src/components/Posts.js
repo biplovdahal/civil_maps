@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../actions/postActions';
-import StackGrid from "react-stack-grid";
-import {geolocated} from 'react-geolocated';
+import Masonry from 'react-masonry-component';
 
 
 class Posts extends Component {
   componentWillMount() {
-    this.props.fetchPosts();
+
+
   }
 
   componentWillReceiveProps(nextProps) {
@@ -18,24 +18,35 @@ class Posts extends Component {
   }
 
   render() {
-    navigator.geolocation.getCurrentPosition(showPosition);
-    function showPosition(position) {
-      console.log(position);
-    }
-    const postItems = this.props.posts.map(post => (
-      <div key={post.id}>
-        <h3>{post.title}</h3>
-        <p>{post.body}</p>
-      </div>
+    const masonryOptions = {
+      transitionDuration: 0
+    };
+
+    const imagesLoadedOptions = { background: '.my-bg-image-el' }
+
+    const postItems = this.props.posts.map(post => post.map(poster=>
+      <li key={poster.id} className="image-element-class">
+                  <img src={poster.image_url}></img>
+      </li>
+
+
+
     ));
     return (
       <div>
-      <StackGrid
-          columnWidth={150}
-        >
-          {postItems}
+      <Masonry
 
-        </StackGrid>
+              className={'my-gallery-class'} // default ''
+              elementType={'ul'} // default 'div'
+              options={masonryOptions} // default {}
+              disableImagesLoaded={false} // default false
+              updateOnEachImageLoad={false}
+              imagesLoadedOptions={imagesLoadedOptions}// default false and works only if disableImagesLoaded is false
+
+          >
+              {postItems}
+        </Masonry>
+
 
       </div>
     );
@@ -43,7 +54,7 @@ class Posts extends Component {
 }
 
 Posts.propTypes = {
-  fetchPosts: PropTypes.func.isRequired,
+  //fetchPosts: PropTypes.func.isRequired,
   posts: PropTypes.array.isRequired,
   newPost: PropTypes.object
 };
@@ -53,4 +64,4 @@ const mapStateToProps = state => ({
   newPost: state.posts.item
 });
 
-export default connect(mapStateToProps, { fetchPosts })(Posts);
+export default connect(mapStateToProps, {})(Posts);
