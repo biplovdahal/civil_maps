@@ -1,4 +1,4 @@
-import { FETCH_POSTS, NEW_POST } from './types';
+import { FETCH_POSTS, NEW_POST, FETCH_PLACES } from './types';
 
 
 // export const fetchPosts = (location) => dispatch => {
@@ -25,6 +25,14 @@ import { FETCH_POSTS, NEW_POST } from './types';
 //   };
 //   }
 
+export const savePlace = myPlace => dispatch =>{
+
+  dispatch({
+    type: NEW_POST,
+    payload:myPlace.place
+  })
+}
+
 
 export const createPost = location => dispatch => {
   fetch('https://vast-beach-76093.herokuapp.com?location='+location.location+'',{
@@ -37,9 +45,8 @@ export const createPost = location => dispatch => {
     },
   })
     .then(res => res.json())
-    .then(post =>
-      dispatch({
-        type: NEW_POST,
+    .then(post  => dispatch({
+        type: FETCH_POSTS,
         payload: post
       })
     );

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createPost } from '../actions/postActions';
+import { Modal, Button } from 'react-bootstrap';
+import { savePlace } from '../actions/postActions';
 
 class PostForm extends Component {
   constructor(props) {
@@ -23,10 +25,11 @@ class PostForm extends Component {
 
     const post = {
       location: this.state.location,
+      showResults:true,
     };
-
     this.props.createPost(post);
   }
+
 
   render() {
     return (
@@ -45,7 +48,8 @@ class PostForm extends Component {
           </div>
           <br />
 
-          <button type="submit">Submit</button>
+          <Button type="submit">Submit</Button>
+
         </form>
       </div>
     );

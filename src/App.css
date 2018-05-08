@@ -6,7 +6,11 @@
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
-
+.top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+}
 .App-header {
   background-color: #222;
   height: 150px;
