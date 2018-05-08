@@ -22,7 +22,7 @@ $ python manage.py collectstatic
 $ python manage.py runserver
 ```
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
+Your app should now be running on [127.0.0.1:8000]
 
 ## Deploying to Heroku
 
