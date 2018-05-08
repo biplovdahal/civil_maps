@@ -10,33 +10,20 @@ export const fetchPosts = () => dispatch => {
     );
 };
 
-// export const createPost = postData => dispatch => {
-//   fetch('https://jsonplaceholder.typicode.com/posts', {
-//     method: 'POST',
-//     headers: {
-//       'content-type': 'application/json'
-//     },
-//     body: JSON.stringify(postData)
-//   })
-//     .then(res => res.json())
-//     .then(post =>
-//       dispatch({
-//         type: NEW_POST,
-//         payload: post
-//       })
-//     );
-// };
-
 export const createPost = location => dispatch => {
-  fetch('https://vast-beach-76093.herokuapp.com/?location='+location.location,{
-    method:'GET',
-    dataType:'jsonp'
+  fetch('http://127.0.0.1:8000/?location='+location.location+'', {
+    method: 'GET',
+
+    headers: {
+      'content-type': 'application/json',
+
+    },
   })
     .then(res => res.json())
-    .then(posts =>
+    .then(post =>
       dispatch({
-        type: FETCH_POSTS,
-        payload: posts
+        type: NEW_POST,
+        payload: post
       })
     );
 };

@@ -13,6 +13,7 @@ export default function(state = initialState, action) {
         items: action.payload
       };
     case NEW_POST:
+      console.log('this is payload', action.payload)
       return {
         ...state,
         item: action.payload

@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../actions/postActions';
+import StackGrid from "react-stack-grid";
+import {geolocated} from 'react-geolocated';
+
 
 class Posts extends Component {
   componentWillMount() {
@@ -15,6 +18,10 @@ class Posts extends Component {
   }
 
   render() {
+    navigator.geolocation.getCurrentPosition(showPosition);
+    function showPosition(position) {
+      console.log(position);
+    }
     const postItems = this.props.posts.map(post => (
       <div key={post.id}>
         <h3>{post.title}</h3>
@@ -23,8 +30,13 @@ class Posts extends Component {
     ));
     return (
       <div>
-        <h1>Posts</h1>
-        {postItems}
+      <StackGrid
+          columnWidth={150}
+        >
+          {postItems}
+
+        </StackGrid>
+
       </div>
     );
   }
