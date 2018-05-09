@@ -1,3 +1,10 @@
+'''
+    File name: urls.py
+    Author: Biplov Dahal
+    Date created: 05/08/2018
+    Date last modified: 05/08/2018
+    Python Version: 3
+'''
 from django.conf.urls import include, url
 from django.urls import path
 
