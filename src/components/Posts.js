@@ -1,3 +1,16 @@
+/**
+ * Posts.js
+
+ * Have a nice day.
+
+ *
+ *
+ * @author  Biplov Dahal, https://github.com/biplovdahal/
+ * @updated 05-08-2018
+
+ *
+ *
+ */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';

@@ -1,0 +1,9 @@
+components/posts.js
+components/Postform.js
+reducers/index.js
+reducers/postReducer
+App.css
+App.js
+actions/postActions.js
+actions/types.js
+store.js

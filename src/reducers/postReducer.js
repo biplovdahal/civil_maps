@@ -1,3 +1,15 @@
+/**
+ * postActions.js
+
+ * Have a nice day.
+ *
+ *
+ * @author  Biplov Dahal, https://github.com/biplovdahal/
+ * @updated 05-08-2018
+
+ *
+ *
+ */
 import { FETCH_POSTS, NEW_POST, FETCH_PLACES } from '../actions/types';
 
 const initialState = {
