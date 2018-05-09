@@ -1,2 +1,2 @@
-views.py
-urls.py
+hello/views.py
+gettingstarted/urls.py

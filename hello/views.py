@@ -35,7 +35,7 @@ class placesAPI(APIView):
                 dictionary['height'] = results[items]['photos'][0]['height']
                 dictionary['place_id'] = results[items]['place_id']
                 dictionary['image_url'] = ('https://maps.googleapis.com/maps/api/place/photo?maxwidth=250&photoreference='+photo_reference+'&sensor=false&key='+key)
-                dictionary['iframe_url'] = "https://www.google.com/maps/embed/v1/place?key=AIzaSyAmmWZcWiCzouqxF-GMgI4RjJmnOjD2AJM&q="+results[items]['formatted_address'].replace(' ','+')
+                dictionary['iframe_url'] = "https://www.google.com/maps/embed/v1/place?key=AIzaSyAmmWZcWiCzouqxF-GMgI4RjJmnOjD2AJM&q="+results[items]['formatted_address'].replace(',',' ').replace(' ','+')
             else:
                 dictionary['image_url'] = None
             dictionary['address'] = results[items]['formatted_address']
