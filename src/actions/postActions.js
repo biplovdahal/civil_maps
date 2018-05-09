@@ -11,8 +11,8 @@ export const savePlace = myPlace => dispatch =>{
 
 
 export const createPost = location => dispatch => {
-  //fetch('https://vast-beach-76093.herokuapp.com?location='+location.location+'',{
-  fetch('http://127.0.0.1:8000?location='+location.location+'', {
+  fetch('https://vast-beach-76093.herokuapp.com?location='+location.location+'',{
+  //fetch('http://127.0.0.1:8000?location='+location.location+'', {
     method: 'GET',
 
     headers: {

@@ -32,6 +32,7 @@ class Posts extends Component {
     this.myPlaces = this.myPlaces.bind(this)
   }
   clickHandler(e, index) {
+    alert("Successfully saved the place go 'My Places' to see it.")
     this.setState({ activeModal: index })
   }
   unsaveHandler(e,index){
@@ -40,7 +41,7 @@ class Posts extends Component {
     this.setState({showMyPlaces:true})
   }
   myPlaces(e){
-    console.log('this is state', this.state)
+
     if (this.state.showMyPlaces == true){
       this.setState({showMyPlaces:false})
       this.setState({showResults:true})
