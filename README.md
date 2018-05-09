@@ -15,3 +15,4 @@ $ git checkout frontend
 ```
 
 PROTOTYPE CAN BE FOUND HERE: https://hidden-bayou-29122.herokuapp.com/
+BACKEND API URL for places: https://vast-beach-76093.herokuapp.com/?location={city}
