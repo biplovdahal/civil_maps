@@ -32,7 +32,6 @@ class Posts extends Component {
     this.myPlaces = this.myPlaces.bind(this)
   }
   clickHandler(e, index) {
-    alert("Successfully saved the place go 'My Places' to see it.")
     this.setState({ activeModal: index })
   }
   unsaveHandler(e,index){
@@ -54,6 +53,7 @@ class Posts extends Component {
   }
 
   placeHandle(e, index){
+    alert("Successfully saved the place go 'My Places' to see it.")
     const post = {
       place : this.props.posts[index]
 
